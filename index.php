@@ -1,10 +1,3 @@
-<?php
-
-$connect = mysqli_connect("localhost", "root", "", "db_chart");
-$produk = mysqli_query($connect, "SELECT * FROM barang");
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +19,10 @@ $produk = mysqli_query($connect, "SELECT * FROM barang");
 
     <canvas id="produk"></canvas>
 
+    <?php
+        $connect = mysqli_connect("localhost", "root", "", "db_chart");
+        $produk = mysqli_query($connect, "SELECT * FROM barang");
+    ?>
     <script src="chart.min.js"></script>
     <script>
         var ctx = document.getElementById('produk');
